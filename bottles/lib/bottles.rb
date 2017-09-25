@@ -13,9 +13,7 @@ class Bottles
   end
 
   def verses(n, m)
-    verse1 = ""
-    n.downto(m) { |i| verse1 += verse(i) + "\n" }
-    verse1
+    n.downto(m).map { |i| verse(i) + "\n"  }.join("")
   end
 
   def sing
