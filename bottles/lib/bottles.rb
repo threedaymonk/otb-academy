@@ -1,18 +1,20 @@
 class Bottles
   def verse(n)
-    if n == 0
-      "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
-    else
-      "#{prefix(n)}\n#{suffix(n)}\n"
-    end
+    "#{prefix(n)}\n#{suffix(n)}\n"
   end
 
   def prefix(n)
-     "#{numberBottles(n)} of beer on the wall, #{numberBottles(n)} of beer."
+    if n > 0
+      "#{numberBottles(n)} of beer on the wall, #{numberBottles(n)} of beer."
+    else
+      "No more bottles of beer on the wall, no more bottles of beer."
+    end
   end
 
   def suffix(n)
-    if n == 1
+    if n == 0
+      "Go to the store and buy some more, 99 bottles of beer on the wall."
+    elsif n == 1
       "Take it down and pass it around, no more bottles of beer on the wall."
     else
       "Take one down and pass it around, #{numberBottles(n - 1)} of beer on the wall."
