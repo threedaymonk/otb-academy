@@ -21,11 +21,13 @@ class Bottles
   end
 
   def verses(start, finish)
-    lines = [99]
-
-    if start == 8 && finish == 6
-     "8 bottles of beer on the wall, 8 bottles of beer.\nTake one down and pass it around, 7 bottles of beer on the wall.\n\n7 bottles of beer on the wall, 7 bottles of beer.\nTake one down and pass it around, 6 bottles of beer on the wall.\n\n6 bottles of beer on the wall, 6 bottles of beer.\nTake one down and pass it around, 5 bottles of beer on the wall.\n\n"
+    number_of_verses = start
+    song = ""
+    while number_of_verses > (finish - 1) do
+      song << verse(number_of_verses) << "\n"
+      number_of_verses -= 1
     end
+    return song
   end
 
   def numberBottles(n)
@@ -34,5 +36,9 @@ class Bottles
     else
       "#{n} bottles"
     end
+  end
+
+  def sing
+    verses(99, 0)
   end
 end
