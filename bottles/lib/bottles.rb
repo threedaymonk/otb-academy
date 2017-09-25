@@ -12,4 +12,10 @@ class Bottles
     end
   end
 
+  def verses(n, m)
+    verse1 = ""
+    n.downto(m) { |i| verse1 += verse(i) + "\n" }
+    verse1
+  end
+
 end
