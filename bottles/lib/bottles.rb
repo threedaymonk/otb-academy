@@ -18,4 +18,8 @@ class Bottles
     verse1
   end
 
+  def sing
+    verses(99, 0)
+  end
+
 end
