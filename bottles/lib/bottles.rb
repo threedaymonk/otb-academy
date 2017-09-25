@@ -1,5 +1,4 @@
 class Bottles
-
   def verse(n)
     if n == 0
       "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
@@ -21,11 +20,7 @@ class Bottles
   end
 
   def verses(start, finish)
-    song = ""
-    start.downto(finish) do |n|
-      song << verse(n) << "\n"
-    end
-    song
+    start.downto(finish).map { |n| verse(n) }.join("\n") << "\n"
   end
 
   def numberBottles(n)
