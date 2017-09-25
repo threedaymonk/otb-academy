@@ -21,13 +21,11 @@ class Bottles
   end
 
   def verses(start, finish)
-    number_of_verses = start
     song = ""
-    while number_of_verses > (finish - 1) do
-      song << verse(number_of_verses) << "\n"
-      number_of_verses -= 1
+    start.downto(finish) do |n|
+      song << verse(n) << "\n"
     end
-    return song
+    song
   end
 
   def numberBottles(n)
