@@ -28,18 +28,17 @@
 # Your goal is to write the score method.
 
 def perform_scoring(number, occurences)
-  score = 0
   if occurences >= 3
-    score = number * multiplier(number) * 10
-    if number == 1 || number == 5
-      score +=  (occurences % 3) * number * multiplier(number)
-    end
-    score
+    (calculate_score(number) * 10) + perform_scoring(number, occurences % 3)
+  elsif number == 1 || number == 5
+    occurences * calculate_score(number)
   else
-    score += occurences * 100 if number == 1
-    score += occurences * 50 if number == 5
-    score
+    0
   end
+end
+
+def calculate_score(number)
+  number * multiplier(number)
 end
 
 def score(dice)
