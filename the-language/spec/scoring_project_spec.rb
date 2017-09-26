@@ -27,8 +27,33 @@
 #
 # Your goal is to write the score method.
 
+def perform_scoring(number, occurences)
+  score = 0
+  if occurences >= 3
+    score = number * multiplier(number) * 10
+    if number == 1 || number == 5
+      score +=  (occurences % 3) * number * multiplier(number)
+    end
+    score
+  else
+    score += occurences * 100 if number == 1
+    score += occurences * 50 if number == 5
+    score
+  end
+end
+
 def score(dice)
-  # You need to write this method
+  dice.group_by { |n| n }
+    .map { |k, v| [k, v.length] }
+    .inject(0) { |sum, (k, v)| sum + perform_scoring(k, v) }
+end
+
+def multiplier(n)
+  if n == 1
+    100
+  else
+    10
+  end
 end
 
 RSpec.describe "scorign a game of greed" do
@@ -73,4 +98,3 @@ RSpec.describe "scorign a game of greed" do
   end
 
 end
-
