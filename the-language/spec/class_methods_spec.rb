@@ -31,18 +31,18 @@ RSpec.describe "Class methods" do
     end
     expect( fido.wag ).to eq( :fidos_wag )
   end
-
-  it "does not affect other objects with singleton methods" do
-    fido = Dog.new
-    rover = Dog.new
-    def fido.wag
-      :fidos_wag
-    end
-
-    expect {
-      rover.wag
-    }.to raise_error( NoMethodError )
-  end
+  #
+  # it "does not affect other objects with singleton methods" do
+  #   fido = Dog.new
+  #   rover = Dog.new
+  #   def fido.wag
+  #     :fidos_wag
+  #   end
+  #
+  # #   expect {
+  # #     rover.wag
+  # #   }.to raise_error( NoMethodError )
+  # # end
 
   class Dog2
     def wag
