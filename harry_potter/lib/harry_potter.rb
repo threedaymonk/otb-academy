@@ -27,3 +27,11 @@ class Shop
     (amount - (amount * (discount(number) / 100)))
   end
 end
+
+=begin
+p ({
+  amount: amount,
+  discount: discount(books.size),
+  sub: (amount * (discount(books.size) / 100)),
+}).inspect
+=end
