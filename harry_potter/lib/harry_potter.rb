@@ -1,7 +1,6 @@
 class HarryPotter
 
-  def buy(book)
-    8
+  def buy(first, second)
+    8 * (first + second)
   end
-
 end
