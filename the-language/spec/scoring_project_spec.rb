@@ -3,11 +3,11 @@ SCORING_HASH = {1 => 100, 5 => 50, 2 => 0, 3 => 0,
 
 def score(dice)
   return 0 if dice.empty?
-  arr = []
+  dice_values = []
   dice.each do |die|
-    arr << SCORING_HASH[die]
+    dice_values << SCORING_HASH[die]
   end
-  arr.inject(:+) + bonus_score(dice)
+  dice_values.inject(:+) + bonus_score(dice)
 end
 
 def bonus_score(dice)
