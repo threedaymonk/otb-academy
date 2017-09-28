@@ -20,7 +20,7 @@ module Scopes
     it "cannot access Dog in the current scope" do
       expect {
         Dog.new
-      }.to raise_error( NameError )
+      }.to raise_error( NameError)
     end
 
     it "can reference nested classes using the scope operator" do
