@@ -8,13 +8,13 @@ RSpec.describe "to_str" do
 
   it "returns a string representation using to_s" do
     not_like_a_string = CanNotBeTreatedAsString.new
-    expect( not_like_a_string.to_s ).to eq( __ )
+    expect( not_like_a_string.to_s ).to eq( "non-string-like" )
   end
 
   it "can't use a normal object in place of a string" do
     expect {
       File.exist?(CanNotBeTreatedAsString.new)
-    }.to raise_error( __ )
+    }.to raise_error( TypeError )
   end
 
   class CanBeTreatedAsString
