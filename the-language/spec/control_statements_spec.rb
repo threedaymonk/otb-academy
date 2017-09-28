@@ -88,7 +88,7 @@ RSpec.describe "Control statements in ruby" do
       result = result * i
       i += 1
     end
-    expect( result ).to eq( 10.downto(1).inject(:*) )
+    expect( result ).to eq( 3628800 )
   end
 
   it "has a break statement" do
@@ -99,7 +99,7 @@ RSpec.describe "Control statements in ruby" do
       result = result * i
       i += 1
     end
-    expect( result ).to eq( 10.downto(1).inject(:*) )
+    expect( result ).to eq( 3628800 )
   end
 
   it "can return a value with break" do
@@ -129,7 +129,7 @@ RSpec.describe "Control statements in ruby" do
     for item in array
       result << item.upcase
     end
-    expect( result ).to eq( ["FISH","AND","CHIPS"] )
+    expect( result ).to eq( ["FISH", "AND", "CHIPS"] )
   end
 
   it "has a times statement" do
