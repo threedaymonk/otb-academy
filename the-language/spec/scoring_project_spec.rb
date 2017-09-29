@@ -27,11 +27,57 @@
 #
 # Your goal is to write the score method.
 
-def score(dice)
-  # You need to write this method
+def perform_scoring(number, occurences)
+  if occurences >= 3
+    (calculate_score(number) * 10) + perform_scoring(number, occurences % 3)
+  elsif number == 1 || number == 5
+    occurences * calculate_score(number)
+  else
+    0
+  end
 end
 
+def calculate_score(number)
+  number * multiplier(number)
+end
+
+def score(dice)
+
+  score = 0
+  counts = Hash.new 0
+
+  dice.each do |r|
+      counts[r] += 1
+    end
+
+  counts.each do |number, count|
+                    case number
+                    when 1
+                      if count >= 3
+                        score += 1000
+                        score += (count - 3)*100
+                      else
+                        score += count*100
+                      end
+                    when 5
+                      if count >= 3
+                        score += 100*number
+                        score += (count - 3)*50
+                      else
+                        score += count*50
+                      end
+                    else
+                      if count >= 3
+                        score += 100*number
+                      end
+                    end
+                  end
+  return score
+end
+
+
 RSpec.describe "scorign a game of greed" do
+
   it "scores an empty list as 0" do
     expect( score([]) ).to eq( 0 )
   end
@@ -71,6 +117,4 @@ RSpec.describe "scorign a game of greed" do
     expect( score([1,1,1,1,1]) ).to eq( 1200 )
     expect( score([1,1,1,5,1]) ).to eq( 1150 )
   end
-
 end
-
