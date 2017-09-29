@@ -3,6 +3,7 @@ gem 'rspec'
 require 'rspec/autorun'
 
 class Working < Struct.new(:answer)
+
 end
 
 RSpec.describe "is it working?" do

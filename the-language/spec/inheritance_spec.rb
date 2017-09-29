@@ -1,3 +1,4 @@
+=begin
 RSpec.describe "inheritance" do
   class Dog
     attr_reader :name
@@ -77,3 +78,4 @@ RSpec.describe "inheritance" do
   end
 
 end
+=end

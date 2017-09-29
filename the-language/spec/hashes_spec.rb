@@ -78,7 +78,7 @@ RSpec.describe "Ruby's Hash structure" do
 
   it "always returns the same object as the default value" do
     hash = Hash.new([])
-      
+
     hash[:a] << 'A'
     hash[:b] << 'B'
 

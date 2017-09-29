@@ -151,3 +151,7 @@
 #     expect( tv.channel ).to eq( 11 )
 #   end
 # end
+<<<<<<< HEAD
+=======
+#
+>>>>>>> testbranch
