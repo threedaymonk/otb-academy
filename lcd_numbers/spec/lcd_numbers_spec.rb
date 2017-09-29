@@ -7,7 +7,7 @@ RSpec.describe "Create LCD numbers" do
 
 		my_lines = Lines.new
 		# my_lines.number_creator("123456789")
-		puts my_lines.number_creator("12345", 7, 7)
+		puts my_lines.number_creator("123456789", 2, 2)
 
 		# expect(my_lines.number_creator("1234567890")).to eq( "    _  _     _  _  _  _  _  _ \n  | _| _||_||_ |_   ||_||_|| |\n  ||_  _|  | _||_|  ||_| _||_|")
 	end
